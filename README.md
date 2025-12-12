@@ -650,22 +650,3 @@ Docker Compose health checks run every 10 seconds with a 40-second startup grace
 3. Verify Docker build: `docker compose up --build`
 4. Update documentation if API changes
 5. Follow existing package structure and naming conventions
-
-### Test Requirements
-
-- Unit tests for new domain logic
-- Integration tests for new endpoints
-- Minimum 80% code coverage for new code
-
-## License
-
-Prototype for internal use.
-
-## Support
-
-For detailed planning and design decisions, refer to:
-- `/mnt/d/Users/admin/Desktop/Sensorbitev10/docs/plan.md` (if exists)
-- Swagger UI: http://localhost:8080/swagger-ui.html
-- OpenAPI specification: http://localhost:8080/api-docs
-
-For issues or questions, review the architecture section above and consult the inline code documentation.
