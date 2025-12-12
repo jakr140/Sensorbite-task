@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 100
+    max-connections: 500
+
+spring:
+  application:
+    name: evacuation-route-service
+  mvc:
+    async:
+      request-timeout: 30000
+
+routing:
+  hazard-penalty-factor: 10000
+  max-computation-time-seconds: 30
+  max-distance-kilometers: 200
+  data:
+    road-network-path: ${DATA_DIR:data}/sample-road-network.geojson
+    flood-zones-path: ${DATA_DIR:data}/sample-flood-zones.geojson
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+logging:
+  level:
+    root: INFO
+    com.sensorbite.evacroute: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
