@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  evac-route-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: evac-route-service
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - LOGGING_LEVEL_ROOT=INFO
+      - DATA_DIR=/app/data
+    volumes:
+      - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped

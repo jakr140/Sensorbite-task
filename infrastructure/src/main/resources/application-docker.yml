@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: evacuation-route-service
+
+routing:
+  data:
+    road-network-path: /app/data/sample-road-network.geojson
+    flood-zones-path: /app/data/sample-flood-zones.geojson
+
+logging:
+  level:
+    root: INFO
+    com.sensorbite.evacroute: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

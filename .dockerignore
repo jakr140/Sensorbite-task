@@ -1,0 +1,27 @@
+# Build artifacts
+target/
+*.class
+
+# IDE
+.git/
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+*.log.*
+
+# Documentation (except README.md)
+docs/
+*.md
+!README.md
+
+# Config files
+.gitignore
+.dockerignore
+
+# Scripts and temporary files
+flood.js
+*.tmp
+*.bakc
